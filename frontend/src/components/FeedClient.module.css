@@ -1,0 +1,81 @@
+.feedWrapper {
+  position: relative;
+  width: 100%;
+  height: 100dvh;
+  background: var(--bg-surface);
+  overflow: hidden;
+}
+
+.headerOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 20;
+  padding-top: env(safe-area-inset-top, 0px);
+}
+
+.headerGradient {
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.4) 50%, transparent 100%);
+  padding-bottom: 1.5rem;
+}
+
+.logoContainer {
+  padding: 1rem 1rem 0.25rem 1rem;
+}
+
+.logoText {
+  font-family: var(--font-clash);
+  font-weight: 700;
+  font-size: 1.25rem;
+  letter-spacing: -0.025em;
+  color: white;
+}
+
+.logoAccent {
+  color: var(--accent-color);
+}
+
+.feedContainer {
+  scroll-snap-type: y mandatory;
+  overflow-y: scroll;
+  height: 100dvh;
+}
+
+.feedItem {
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+}
+
+.stateContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  gap: 1rem;
+  padding: 0 2rem;
+  text-align: center;
+}
+
+.stateIcon {
+  font-size: 2.25rem;
+}
+
+.stateText {
+  color: var(--text-muted);
+  font-family: var(--font-satoshi);
+  font-size: 0.875rem;
+}
+
+.retryButton {
+  padding: 0.5rem 1.25rem;
+  border-radius: 9999px;
+  background-color: var(--accent-color);
+  color: #000;
+  font-size: 0.875rem;
+  font-weight: 600;
+  font-family: var(--font-satoshi);
+  border: none;
+  cursor: pointer;
+}
