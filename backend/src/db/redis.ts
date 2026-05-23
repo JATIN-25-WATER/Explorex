@@ -6,11 +6,9 @@ dotenv.config();
 const redisHost = process.env.REDIS_HOST || 'localhost';
 const redisPort = parseInt(process.env.REDIS_PORT || '6379');
 
-// Create a client that connects explicitly (lazyConnect: true as we handle startup in index.ts)
-const redis = new Redis({
-  host: redisHost,
-  port: redisPort,
-  lazyConnect: true,
-});
+// Prefer REDIS_URL (cloud deployments) → fall back to host/port (local dev)
+const redis = process.env.REDIS_URL
+  ? new Redis(process.env.REDIS_URL, { lazyConnect: true })
+  : new Redis({ host: redisHost, port: redisPort, lazyConnect: true });
 
 export default redis;
