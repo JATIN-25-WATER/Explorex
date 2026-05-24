@@ -1,5 +1,7 @@
 # ExploreX
 
+**Live Demo:** https://explorex-spsb.vercel.app
+
 > Mobile-first place discovery — geospatial feed, smart impressions, real-time scoring.
 
 Built with Next.js 15, Node.js/Express, PostgreSQL + PostGIS, and Redis. A full-stack app that ranks nearby places using a composite scoring algorithm and serves them in a TikTok-style vertical feed.
