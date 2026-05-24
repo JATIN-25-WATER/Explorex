@@ -1,6 +1,6 @@
 # ExploreX
 
-**Live Demo:** https://explorex-spsb.vercel.app · **GitHub:** https://github.com/JATIN-25-WATER/Explorex
+**Live Demo:** https://explorex-spsb.vercel.app 
 
 > Discover what's around you. Built for weekenders, wanderers, and anyone new to a city.
 
