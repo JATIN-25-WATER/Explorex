@@ -1,16 +1,18 @@
 # ExploreX
 
-**Live Demo:** https://explorex-spsb.vercel.app
+**Live Demo:** https://explorex-spsb.vercel.app · **GitHub:** https://github.com/JATIN-25-WATER/Explorex
 
-> Mobile-first place discovery — geospatial feed, smart impressions, real-time scoring.
+> Discover what's around you. Built for weekenders, wanderers, and anyone new to a city.
 
-Built with Next.js 15, Node.js/Express, PostgreSQL + PostGIS, and Redis. A full-stack app that ranks nearby places using a composite scoring algorithm and serves them in a TikTok-style vertical feed.
+ExploreX helps you find the best places nearby — cafés, restaurants, bars, arcades, events — ranked by how close they are, how good they are, and how popular they are right now. No endless lists. No ads. Just a clean scrollable feed of places worth visiting.
+
+> **Note:** This is an early MVP, actively being developed. New features and improvements are on the way.
 
 ---
 
-## What it does
+## The problem it solves
 
-Open the app → grant location → scroll through ranked place cards. Every card is scored in real time by proximity, rating, engagement, and trending momentum. Tap any card for the full detail view.
+Most discovery apps show you the same popular spots everyone already knows. ExploreX ranks places using a real-time scoring algorithm that weighs distance, rating, engagement, and trending momentum — so what you see is actually relevant to where you are and what's happening now.
 
 ---
 
@@ -41,7 +43,7 @@ score = 0.35 × proximity
 
 **Keyset pagination** — cursors encode the last returned score as base64. No `OFFSET`, so results stay stable as data changes and DB seeks are O(1).
 
-**Impression buffering** — `IntersectionObserver` fires after 1.5 s of sustained viewport visibility. Counts hit Redis (`HINCRBY`) first; Postgres is updated in batches to avoid hot-row contention.
+**Impression buffering** — `IntersectionObserver` fires after 1.5s of sustained viewport visibility. Counts hit Redis (`HINCRBY`) first; Postgres is updated in batches to avoid hot-row contention.
 
 ---
 
@@ -137,11 +139,11 @@ Explorex/
 
 ## Roadmap
 
-- [ ] Auth — JWT, user accounts
-- [ ] Save places — per-user interest lists
-- [ ] Reviews — post + aggregate ratings
+- [ ] Auth — user accounts
+- [ ] Save places — personal lists
+- [ ] Reviews — post and aggregate ratings
 - [ ] Trending engine — Redis sorted sets
-- [ ] Cloud deployment — Vercel + Railway
+- [ ] Expand cities beyond Mumbai
 
 ---
 
